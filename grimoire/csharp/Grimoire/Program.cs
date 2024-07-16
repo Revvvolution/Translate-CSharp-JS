@@ -50,27 +50,27 @@ List<Spell> GetAllSpells()
         new Spell() {
             Name = "Turn enemy into a newt",
             IsEvil = true,
-            EnergyReqired = 5.1
+            EnergyRequired = 5.1
         },
         new Spell() {
             Name = "Conjure some gold for a local charity",
             IsEvil = false,
-            EnergyReqired = 2.99
+            EnergyRequired = 2.99
         },
         new Spell() {
             Name = "Give a deaf person the ability to heal",
             IsEvil = false,
-            EnergyReqired = 12.2
+            EnergyRequired = 12.2
         },
         new Spell() {
             Name = "Make yourself emperor of the universe",
             IsEvil = true,
-            EnergyReqired = 100.0
+            EnergyRequired = 100.0
         },
         new Spell() {
             Name = "Convince your relatives your political views are correct",
             IsEvil = false,
-            EnergyReqired = 2921.5
+            EnergyRequired = 2921.5
         }
     };
 
@@ -87,5 +87,5 @@ public class Spell
 {
     public string Name { get; set; }
     public bool IsEvil { get; set; }
-    public double EnergyReqired { get; set; }
+    public double EnergyRequired { get; set; }
 }
