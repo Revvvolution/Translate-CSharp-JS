@@ -13,30 +13,30 @@ const Roll = () => {
 }
 
 function numberToWord(num) {
-    let word;
+    let numWord;
     switch (num) {
         case 1:
-            word = "One";
+            numWord = "One";
             break;
         case 2:
-            word = "Two";
+            numWord = "Two";
             break;
         case 3:
-            word = "Three";
+            numWord = "Three";
             break;
         case 4:
-            word = "Four";
+            numWord = "Four";
             break;
         case 5:
-            word = "Five";
+            numWord = "Five";
             break;
         case 6:
-            word = "Six";
+            numWord = "Six";
             break;
         default:
-            word = "Number out of range";
+            numWord = "Number out of range";
     }
-    return word;
+    return numWord;
 }
 
 for (let i = 0; i < 10; i++) {
