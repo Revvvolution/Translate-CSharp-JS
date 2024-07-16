@@ -29,20 +29,22 @@ const allSpells = [
 ]
 
 
+// *** Simplified unnecessary variable-setting steps from lines 66 and 67 for this program's purpose ***
+
 
 // Good book spell objects
-const MakeGoodSpellBook = (allSpells) => {
-    const goodBook = allSpells.filter(good => good.IsEvil === false);
-    return goodBook;
-}
+// const MakeGoodSpellBook = (allSpells) => {
+//     const goodBook = allSpells.filter(good => good.IsEvil === false);
+//     return goodBook;
+// }
 
 
 
 // Evil book spell objects
-const MakeEvilSpellBook = (allSpells) => {
-    const evilBook = allSpells.filter(evil => evil.IsEvil === true);
-    return evilBook;
-}
+// const MakeEvilSpellBook = (allSpells) => {
+//     const evilBook = allSpells.filter(evil => evil.IsEvil === true);
+//     return evilBook;
+// }
 
 
 
@@ -62,8 +64,8 @@ const DisplaySpellBook = (book) => {
 
 
 // Variables to pass to display argument
-const goodBook = MakeGoodSpellBook(allSpells);
-const evilBook = MakeEvilSpellBook(allSpells);
+const goodBook = allSpells.filter(good => good.IsEvil === false);
+const evilBook = allSpells.filter(evil => evil.IsEvil === true);
 
 
 // Passing defined variables as arguments to the display function call
