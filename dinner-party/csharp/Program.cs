@@ -4,12 +4,24 @@ using System.Linq;
 using System.Text.RegularExpressions;
 
 
-public class Guest(string name, string job, string bio)
+public class Guest
 {
-    public string Name { get; } = name;
-    public string Occupation { get; } = job;
-    public string Bio { get; } = bio;
-};
+    public string Name { get; }
+    public string Occupation { get; }
+    public string Bio { get; }
+
+    public Guest(string name, string job, string bio)
+    {
+        Name = name;
+        Occupation = job;
+        Bio = bio;
+    }
+
+    public override string ToString()
+    {
+        return $"{Name} ({Occupation}) {Bio}";
+    }
+}
 
 class Program
 {
@@ -25,12 +37,49 @@ class Program
         var g7 = new Guest("Admiral Grace Hopper", "computer scientist", "(1906–1992) - developed early compilers: FLOW-Matic, COBOL; worked on UNIVAC; gave speeches on computer history, where she gave out nano-seconds");
         var g8 = new Guest("Indira Gandhi", "politician", "(1917 - 1984) Prime Minister of India 1966 - 1977");
     
-        List<Guest> group = [g1, g2, g3, g4, g5, g6, g7, g8];
+        List<Guest> guests = [g1, g2, g3, g4, g5, g6, g7, g8];
 
-        foreach (Guest g in group)
+        foreach (Guest g in guests)
         {
             Console.WriteLine($"{g.Name} ({g.Occupation}) {g.Bio}");
         }
+
+        // Grouping them by
+        
+        List<Guest> table_1 = new List<Guest>();
+        
+        List<Guest> table_2 = new List<Guest>();
+
+        List<string> guestOccupations = new List<string>();
+
+
+        foreach (Guest g in guests)
+        {
+            if (guestOccupations.Contains(g.Occupation))
+            {
+                table_2.Add(g);
+            }
+            else
+            {
+                guestOccupations.Add(g.Occupation);
+                table_1.Add(g);
+            }
+        }
+
+        Console.WriteLine("\n\n\tTable 1");
+        foreach (Guest g in table_1)
+        {
+            Console.WriteLine($"{g.Name} ({g.Occupation}) {g.Bio}");
+        }
+
+        Console.WriteLine("\n\n\tTable 2");
+        foreach (Guest g in table_2)
+        {
+            Console.WriteLine($"{g.Name} ({g.Occupation}) {g.Bio}");
+        }
+
+
+
 
     }
 }
